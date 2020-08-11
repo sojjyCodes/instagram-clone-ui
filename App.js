@@ -1,20 +1,28 @@
+/*
+home = home
+profile = account-outline,
+dots-vertical, dots-horizontal,            List of icons that i will need
+feed = heart/heart-outlne,
+post = plus, Ionics-add = add, add-outline
+send = send, send-outline,
+FontAwesome5-search = search or FontAwesome5Brands-search = sistrix*/
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import "react-native-gesture-handler";
 import { createAppContainer } from "react-navigation";
 import "react-navigation-tabs";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import HomeScreen from "./src/HomeScreen";
-import SearchScreen from "./src/SearchScreen";
-import PostScreen from "./src/PostScreen";
-import FeedScreen from "./src/FeedScreen";
-import ProfileScreen from "./src/ProfileScreen";
+import { MaterialCommunityIcons, FontAwesome5 } from "@expo/vector-icons";
+import HomeScreen from "./src/Screens/HomeScreen";
+import SearchScreen from "./src/Screens/SearchScreen";
+import PostScreen from "./src/Screens/PostScreen";
+import FeedScreen from "./src/Screens/FeedScreen";
+import ProfileScreen from "./src/Screens/ProfileScreen";
 /*import TopBar from "./src/TopBar";
 */
 const TabNavigator = createMaterialTopTabNavigator(
     {
-        Home: HomeScreen,
+		Home: HomeScreen,
         Search: SearchScreen,
         Post: PostScreen,
         Feed: FeedScreen,
@@ -25,44 +33,60 @@ const TabNavigator = createMaterialTopTabNavigator(
             tabBarIcon: ({ tintColor }) => {
                 const { routeName } = navigation.state;
                 let iconName = "home";
-                if (routeName === "Library") {
-                    iconName = "folder";
+                if (routeName === "Profile") {
+                    iconName = "user";
                 }
                 switch (routeName) {
                     case "Home":
                         iconName = "home";
                         break;
-                    case "Explore":
-                        iconName = "compass";
+                    case "Search":
+                        iconName = "instagram";
                         break;
-                    case "Subscription":
-                        iconName = "youtube-subscription";
+                    case "Post":
+                        iconName = "plus";
                         break;
-                    case "Notification":
-                        iconName = "bell";
+                    case "Feed":
+                        iconName = "heart";
                         break;
-                    case "Libary":
-                        iconName = "folder";
+                    case "Profile":
+                        iconName = "account-outline";
                         break;
                 }
 
-                return <Icon name={iconName} size={24} color={tintColor} />;
+                return (
+                    <MaterialCommunityIcons
+                        name={iconName}
+                        size={24}
+                        color={tintColor}
+                    />
+                );
+                if (routeName === "search") {
+                    return (
+                        <FontAwesome5
+                            size={24}
+                            color={tintColor}
+                        />
+                    );
+                }
             },
         }),
         tabBarOptions: {
             style: {
-                backgroundColor: "#1b1b1b",
+                backgroundColor: "white",
+				bottomMargin: 30,
             },
-            activeTintColor: "white",
-            inactiveTintColor: "darkgray",
+            activeTintColor: "blue",
+            inactiveTintColor: "black",
             showIcon: true,
             showLabel: false,
             indicatorStyle: {
-                opacity: 0,
+                opacity: 100,
+				backgroundColor: "blue",
             },
         },
         animationEnabled: true,
-        swipeEnabled: false,
+        swipeEnabled: true,
         tabBarPosition: "bottom",
     }
 );
