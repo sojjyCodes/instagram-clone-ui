@@ -12,7 +12,7 @@ import "react-native-gesture-handler";
 import { createAppContainer } from "react-navigation";
 import "react-navigation-tabs";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
-import { MaterialCommunityIcons, FontAwesome5 } from "@expo/vector-icons";
+import { MaterialCommunityIcons} from "@expo/vector-icons";
 import HomeScreen from "./src/Screens/HomeScreen";
 import SearchScreen from "./src/Screens/SearchScreen";
 import PostScreen from "./src/Screens/PostScreen";
@@ -33,15 +33,13 @@ const TabNavigator = createMaterialTopTabNavigator(
             tabBarIcon: ({ tintColor }) => {
                 const { routeName } = navigation.state;
                 let iconName = "home";
-                if (routeName === "Profile") {
-                    iconName = "user";
-                }
+
                 switch (routeName) {
                     case "Home":
                         iconName = "home";
                         break;
                     case "Search":
-                        iconName = "instagram";
+                        iconName = "magnify";
                         break;
                     case "Post":
                         iconName = "plus";
@@ -61,14 +59,7 @@ const TabNavigator = createMaterialTopTabNavigator(
                         color={tintColor}
                     />
                 );
-                if (routeName === "search") {
-                    return (
-                        <FontAwesome5
-                            size={24}
-                            color={tintColor}
-                        />
-                    );
-                }
+                
             },
         }),
         tabBarOptions: {
