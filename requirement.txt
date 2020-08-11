@@ -1,0 +1,17 @@
+"nodejs",
+"npm",
+"@react-native-community/masked-view"
+"@react-navigation/material-top-tabs"
+"@react-navigation/native"
+"@react-navigation/stack"
+"expo", #Optional you can use react-native-cli
+"expo-status-bar", #Same with expo
+
+"react",
+"react-dom",
+"react-native"
+"react-native-safe-area-context"
+"react-native-screens"
+"react-native-sidebar"
+"react-navigation"
+"react-navigation-tabs"
