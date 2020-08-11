@@ -1,11 +1,7 @@
 /*
-home = home
-profile = account-outline,
 dots-vertical, dots-horizontal,            List of icons that i will need
-feed = heart/heart-outlne,
-post = plus, Ionics-add = add, add-outline
 send = send, send-outline,
-FontAwesome5-search = search or FontAwesome5Brands-search = sistrix*/
+*/
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import "react-native-gesture-handler";
@@ -48,7 +44,7 @@ const TabNavigator = createMaterialTopTabNavigator(
                         iconName = "heart";
                         break;
                     case "Profile":
-                        iconName = "account-outline";
+                        iconName = "account";
                         break;
                 }
 
@@ -77,7 +73,7 @@ const TabNavigator = createMaterialTopTabNavigator(
             },
         },
         animationEnabled: true,
-        swipeEnabled: true,
+        swipeEnabled: false,
         tabBarPosition: "bottom",
     }
 );
