@@ -5,20 +5,20 @@ send = send, send-outline,
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import "react-native-gesture-handler";
-import { createAppContainer } from "react-navigation";
+import { createAppContainer, StackNavigator } from "react-navigation";
 import "react-navigation-tabs";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
-import { MaterialCommunityIcons} from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import HomeScreen from "./src/Screens/HomeScreen";
 import SearchScreen from "./src/Screens/SearchScreen";
 import PostScreen from "./src/Screens/PostScreen";
 import FeedScreen from "./src/Screens/FeedScreen";
 import ProfileScreen from "./src/Screens/ProfileScreen";
 /*import TopBar from "./src/TopBar";
-*/
+ */
 const TabNavigator = createMaterialTopTabNavigator(
     {
-		Home: HomeScreen,
+        Home: HomeScreen,
         Search: SearchScreen,
         Post: PostScreen,
         Feed: FeedScreen,
@@ -55,13 +55,12 @@ const TabNavigator = createMaterialTopTabNavigator(
                         color={tintColor}
                     />
                 );
-                
             },
         }),
         tabBarOptions: {
             style: {
                 backgroundColor: "white",
-				bottomMargin: 30,
+                bottomMargin: 30,
             },
             activeTintColor: "blue",
             inactiveTintColor: "black",
@@ -69,7 +68,7 @@ const TabNavigator = createMaterialTopTabNavigator(
             showLabel: false,
             indicatorStyle: {
                 opacity: 100,
-				backgroundColor: "blue",
+                backgroundColor: "blue",
             },
         },
         animationEnabled: true,
